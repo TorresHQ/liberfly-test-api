@@ -13,6 +13,7 @@
 * [Configurações adicionais - Pacotes Externos](#configurações-adicionais---pacotes-externos)
   * [Gerar chave secreta](#gerar-chave-secreta)
   * [L5 Swagger](#l5-swagger)
+* [Executar os Testes](#executar-os-testes)
 * [ ➡️ Considerações (LEIA-ME!) ⬅️](#considerações)
 
 # Instalação do Ambiente Local 
@@ -110,12 +111,21 @@ Isso atualizará seu arquivo .env com algo como `JWT_SECRET=foobar`
 
 Para gerar a documentação Swagger/OpenApi para sua API, o Swagger oferece um conjunto de anotações para declarar e manipular a saída. Execute:
 ```php
-$ php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
-$ php artisan l5-swagger:generate
+php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
+
+php artisan l5-swagger:generate
 ```
 Você poderá visualizar a documentação da sua api em uma rota como: http://127.0.0.1:8000/api/documentation
 
 ![alt text](image-1.png)
+
+# Executar os Testes
+
+Por fim execute os testes:
+```
+php artisan test --env=testing
+```
+![alt text](image-3.png)
 
 # Considerações
 Os recursos que idealizei inicialmente para a aplicação e que não tive tempo ou necessidade de construir para este teste estão ilustrados no diagrama abaixo. Minha prioridade foi atender minimamente todos os pontos solicitados, garantindo uma organização que facilita a compreensão do código e sua personalização.
